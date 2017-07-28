@@ -1,2 +1,27 @@
 <!--The content below is only a placeholder and can be replaced.-->
-<h2>Appolo Data Client Demo</h2>
+<div class="container">
+  <br><br>
+  <h2 class="text-primary">Appolo Client Data Sample Demo</h2>
+  <hr>
+  <br><br>
+  <div *ngIf="loading" class="alert alert-info text-centered">Loading data ...</div>
+  <div *ngIf="!loading && tableData?.metrics.length" class="data-table-container">
+    <table class="table table-condensed">
+      <thead>
+        <tr>
+          <th>Date</th>
+          <th>Value</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let row of tableData.metrics">
+          <td>{{ row.TS }}</td>
+          <td>{{ row.VL }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div *ngIf="!loading && !tableData?.metrics.length" class="alert alert-warning">
+    We are unable to display any data at this time.
+  </div>
+</div>
