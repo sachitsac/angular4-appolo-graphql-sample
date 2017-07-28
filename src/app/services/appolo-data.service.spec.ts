@@ -1,6 +1,6 @@
 import { TestBed, inject } from '@angular/core/testing';
-
 import { AppoloDataService } from './appolo-data.service';
+import { Apollo } from 'apollo-angular';
 
 describe('AppoloDataService', () => {
   beforeEach(() => {
@@ -9,7 +9,7 @@ describe('AppoloDataService', () => {
     });
   });
 
-  it('should be created', inject([AppoloDataService], (service: AppoloDataService) => {
+  it('should be created', inject([AppoloDataService, Apollo], (service: AppoloDataService) => {
     expect(service).toBeTruthy();
   }));
 });

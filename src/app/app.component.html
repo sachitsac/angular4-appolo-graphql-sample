@@ -15,7 +15,7 @@
       </thead>
       <tbody>
         <tr *ngFor="let row of tableData.metrics">
-          <td>{{ row.TS }}</td>
+          <td>{{ row.TS | date:'medium' }}</td>
           <td>{{ row.VL }}</td>
         </tr>
       </tbody>
